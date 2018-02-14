@@ -17,11 +17,6 @@ body {
   height: 100%;
   width: 100%; }
 
-ul {
-  margin: 0px; }
-  ul li {
-    margin: 0px; }
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -119,6 +114,17 @@ textarea {
     .navigation li a:hover {
       text-decoration: none; }
 
+#description ul {
+  margin: 0px; }
+  #description ul li {
+    margin: 0px; }
+
+#description.absolute {
+  bottom: 0px; }
+
+#description.fixed {
+  top: 0px; }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -177,7 +183,7 @@ textarea {
  * Hide visually and from screen readers
  */
 .hidden {
-  display: none !important; }
+  display: none; }
 
 /*
  * Hide only visually, but have it available for screen readers:

@@ -26,7 +26,7 @@
       actualiza tu navegador para una mejor experiencia.</p>
     ="<![endif ]-->"
     .video-container
-      %video{autoplay:true,loop:true,width:"1280",height:"720",poster:"/videos/images/bbq.png"}
+      %video{autoplay:true,loop:true,width:"1280",height:"720",poster:"/videos/images/bbq.jpg"}
         %source{src:"/videos/mp4/bbq.mp4", type:"video/mp4"}
         %source{src:"/videos/webm/bbq.webm", type:"video/webm"}
 
@@ -44,11 +44,11 @@
           -menu.each do |item|
             %li.list-inline-item
               %a{href:'#'}= item
-      .absolute.black.large-padding.bottom.white-text.full-width#description
-        .row.middle-xs
+      .absolute.black.large-padding.white-text.full-width#description
+        .row.middle-xs.center-xs
           .col-xs-7.col-sm-6.white-text.medium
             Atención cálida y comida preparada por artistas
-          .col-xs
+          .col-xs.hidden#sticky-navigation
             .box
               %nav.text-right.navigation
                 %ul.list-inline
@@ -57,3 +57,9 @@
                       %a{href:'#'}= item
 
     .full-height
+    %script{src:'https://code.jquery.com/jquery-3.3.1.js', 
+      integrity:'sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', 
+      crossorigin:'anonymous'}
+    %script
+      window.jQuery || document.write("<script src'/js/vendor/jquery-3.2.1.min.js'><\/script>")
+    %script{src:"/js/main.js"}

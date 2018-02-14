@@ -24,13 +24,6 @@ body {
     width: 100%;
 }
 
-ul {
-    margin: 0px;
-    li {
-        margin: 0px;
-    }
-}
-
 
 /*
  * Remove text-shadow in selection highlight:
@@ -158,6 +151,21 @@ textarea {
     }
 }
 
+#description {
+    ul {
+        margin: 0px;
+        li {
+            margin: 0px;
+        }
+    }
+    &.absolute {
+        bottom: 0px;
+    }
+    &.fixed {
+        top: 0px;
+    }
+}
+
 
 /* ==========================================================================
    Helper classes
@@ -237,7 +245,7 @@ textarea {
  */
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 
