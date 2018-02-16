@@ -30,7 +30,7 @@
         %source{src:"/videos/mp4/bbq.mp4", type:"video/mp4"}
         %source{src:"/videos/webm/bbq.webm", type:"video/webm"}
 
-    .row.full-height.middle-xs.center-xs.relative.up
+    .row.full-height.middle-xs.center-xs.relative.up#home
       .col-xs-12
         .box.white-text
           %img{src:"/images/logo.png", width:200}
@@ -56,7 +56,26 @@
                     %li.list-inline-item
                       %a{href:'#'}= item
 
-    .full-height
+    .text-center.relative#menu
+      .absolute.white#menu-title
+        %h2.dancing-script.title Menú
+      -menu_photos = [{title: "Club Sandwich", pricing: "10.00", image:"club-sandwich"},
+                      {title: "Combo hamburguesa", pricing: "50.00",image:"combo"},
+                      {title: "Hamburguesa", pricing: "20.00",image:"hamburger"},
+                      {title: "Hot cakes", pricing: "30.00",image:"hot-cakes"},
+                      {title: "Panini", pricing: "15.00",image:"panini"},
+                      {title: "Papas", pricing: "10.00",image:"papas"},
+                      {title: "Club Sandwich", pricing: "10.00",image:"club-sandwich"},
+                      {title: "Hamburguesa", pricing: "20.00",image:"hamburger"}]
+      .row
+        -menu_photos.each do |photo|
+          .col-lg-3.col-md-4.col-sm-6.col-xs-12.food{style:"background-image:url(/images/food/#{photo[:image]}-thumb.jpg)"}
+            // %img{src:"/images/food/#{photo[:image]}-thumb.jpg"}
+            .screen
+              .row.middle-xs.full-height
+                .col-xs-12.white-text
+                  %h3.dancing-script.subtitle=photo[:title]
+                  %p.no-margin="USD" + photo[:pricing]
     %script{src:'https://code.jquery.com/jquery-3.3.1.js', 
       integrity:'sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', 
       crossorigin:'anonymous'}
