@@ -1,9 +1,21 @@
 ;
 (function() {
     let sticky = false
-        // $("#sticky-navigation").removeClass("hidden")
-        // $("#sticky-navigation").slideUp(0)
+    let currentPosition = 1
+    const image_counter = parseInt($("[data-name='image-counter']").attr("content") - 1);
+    // $("#sticky-navigation").removeClass("hidden")
+    // $("#sticky-navigation").slideUp(0)
+    setInterval(() => {
 
+        if (currentPosition < image_counter) {
+            currentPosition++;
+        } else {
+            currentPosition = 0;
+        }
+        $("#gallery .inner").css({
+            left: "-" + currentPosition * 100 + '%'
+        })
+    }, 4000)
     $(window).scroll(() => {
         const inBottom = isInBottom()
 

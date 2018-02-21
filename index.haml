@@ -1,3 +1,4 @@
+-gallery_images = ["club-sandwich", "papas", "hamburger", "panini", "club-sandwich", "papas"]
 !!!5
 %html{class:"no-js", lang:"es"}
   %head
@@ -6,6 +7,7 @@
     %meta{name:"description", content:"Come rico en el mejor restaurante de la ciudad"}
     %meta{content:"ie=edge", "http-equiv":"x-ua-compatible"}
     %meta{name:"viewport", content:"width=device-width, initial-scale=1, shrink-to-fit=no"}
+    %meta{:"data-name" => "image-counter", content:"#{gallery_images.size}"}
     %link{rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Dancing+Script"}
     %link{rel:"stylesheet", href:"css/normalize.css"}
     %link{rel:"stylesheet", href:"css/bootstrap.css"}
@@ -76,6 +78,24 @@
                 .col-xs-12.white-text
                   %h3.dancing-script.subtitle=photo[:title]
                   %p.no-margin="USD" + photo[:pricing]
+    
+
+    #gallery
+      .inner
+        -gallery_images.each do |image|
+          .image{style:"background-image:url(/images/food/#{image}.jpg)"}
+    
+    .container
+      .card.white.black-text-text-center.relative
+        %h3.medium.slim
+          En
+          %strong.dancing-script.medium RestauranteFacilito
+          cocinar no es una profesión, no es una técnica, es un
+          %strong.dancing-script.medium arte
+        %p.top-space
+          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+          %strong.dancing-script.medium - Coco - Chef
+
     %script{src:'https://code.jquery.com/jquery-3.3.1.js', 
       integrity:'sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', 
       crossorigin:'anonymous'}
